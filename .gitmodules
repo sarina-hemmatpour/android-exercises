@@ -1,3 +1,15 @@
 [submodule "FrafmentsWithRecyclerView"]
 	path = FrafmentsWithRecyclerView
 	url = https://github.com/sarina-hemmatpour/FrafmentsWithRecyclerView
+[submodule "UserProfileProject"]
+	path = UserProfileProject
+	url = https://github.com/sarina-hemmatpour/UserProfileProject
+[submodule "RecyclerView"]
+	path = RecyclerView
+	url = https://github.com/sarina-hemmatpour/RecyclerView
+[submodule "Fragments"]
+	path = Fragments
+	url = https://github.com/sarina-hemmatpour/Fragments
+[submodule "challengeFragmentRecyclerView"]
+	path = challengeFragmentRecyclerView
+	url = https://github.com/sarina-hemmatpour/challengeFragmentRecyclerView
