@@ -24,9 +24,15 @@ public class MainActivity extends AppCompatActivity implements MyDialog.MyDialog
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MyDialog myDialog=MyDialog.newInstance(tvData.getText().toString().trim());
-                myDialog.setCancelable(false);
-                myDialog.show(getSupportFragmentManager(),null);
+                //* For Dialog *
+//                MyDialog myDialog=MyDialog.newInstance(tvData.getText().toString().trim());
+//                myDialog.setCancelable(false);
+//                myDialog.show(getSupportFragmentManager(),null);
+
+                //For Bottom Sheet Dialog * just the same
+                 MyBottomSheetDialog myBottomSheetDialog=MyBottomSheetDialog.newInstance(tvData.getText().toString().trim());
+                 myBottomSheetDialog.setCancelable(false);
+                 myBottomSheetDialog.show(getSupportFragmentManager() , null);
 
 
             }

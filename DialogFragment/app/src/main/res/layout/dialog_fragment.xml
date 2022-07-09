@@ -21,13 +21,17 @@
         android:layout_margin="10dp">
         <Button
             android:id="@+id/btnOk"
+            android:backgroundTint="@color/purple_500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:text="ok"
             android:layout_marginStart="10dp"/>
 
         <Button
             android:id="@+id/btnCancel"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/purple_200"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="cancel"
