@@ -13,3 +13,6 @@
 [submodule "challengeFragmentRecyclerView"]
 	path = challengeFragmentRecyclerView
 	url = https://github.com/sarina-hemmatpour/challengeFragmentRecyclerView
+[submodule "Contacts_miniProject"]
+	path = Contacts_miniProject
+	url = https://github.com/sarina-hemmatpour/Contacts_miniProject.git
