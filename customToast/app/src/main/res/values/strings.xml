@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">customToast</string>
+    <string name="toast_massage">Data saved successfully!</string>
+</resources>
