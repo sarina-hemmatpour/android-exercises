@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name ..."
+        android:id="@+id/et_main_name"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Surname ..."
+        android:id="@+id/et_main_surname"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:id="@+id/btn_main_add"
+        android:layout_marginBottom="8dp"
+        android:onClick="btnAddData"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="save data to file"
+        android:id="@+id/btn_main_saveData"
+        android:layout_marginBottom="16dp"
+        android:onClick="btnSaveData"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="DATA"
+        android:textColor="#212121"
+        android:gravity="center_horizontal"
+        android:id="@+id/tv_main_data" />
+
+
+</LinearLayout>
