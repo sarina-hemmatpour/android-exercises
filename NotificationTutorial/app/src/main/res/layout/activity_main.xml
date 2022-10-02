@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#212121">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="52dp"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/btn_main_simpleNotification"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:onClick="onClick"
+            android:text="@string/simple_notification"
+            android:textAllCaps="false"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btn_main_bigPictureStyleNotification"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="onClick"
+            android:text="Big Picture Style Notification"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_main_bigTextStyleNotification"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="onClick"
+            android:text="Big Text Style Notification"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_main_inboxStyleNotification"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:onClick="onClick"
+            android:text="Inbox Style Notification"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+
+
+
+</FrameLayout>
