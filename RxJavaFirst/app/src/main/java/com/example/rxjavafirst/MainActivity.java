@@ -13,6 +13,9 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Predicate;
+import io.reactivex.subjects.BehaviorSubject;
+import io.reactivex.subjects.PublishSubject;
+import io.reactivex.subjects.ReplaySubject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -262,6 +265,7 @@ public class MainActivity extends AppCompatActivity {
 
          */
 
+        /*
         //timer
         //bade ye meghdar zaman yek item ra emit mikonad
         Observable.timer(1 , TimeUnit.SECONDS)
@@ -289,6 +293,125 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+
+
+         */
+
+        // /////////////////////////////////////////////////////////////////////////////////////////
+
+        //Subjects
+
+
+        //publish subject
+        PublishSubject<Integer> subject=PublishSubject.create();
+
+        subject.onNext(1);
+        subject.onNext(2);
+        subject.onNext(3);
+
+        //subject.subscribe((number) -> Log.i(TAG, "onNext: " + number)); // 4 5 6
+        subject.subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                disposable=d;
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                Log.i(TAG, "onNext: " + integer);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                Log.i(TAG, "onComplete: publish");
+                disposable.dispose();
+            }
+        }); // 4 5 6
+
+        subject.onNext(4);
+        subject.onNext(5);
+        subject.onNext(6);
+
+
+        subject.onComplete();
+
+        //behavior
+        BehaviorSubject<Integer> subject1=BehaviorSubject.create();
+
+        subject1.onNext(1);
+        subject1.onNext(2);
+        subject1.onNext(3);
+
+        subject1.subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                disposable=d;
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                Log.i(TAG, "onNext: " + integer);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                Log.i(TAG, "onComplete: behavior");
+                disposable.dispose();
+            }
+        }); // 3 4 5 6
+
+        subject1.onNext(4);
+        subject1.onNext(5);
+        subject1.onNext(6);
+
+        subject1.onComplete();
+        //replay
+
+        ReplaySubject<Integer> subject2=ReplaySubject.create();
+
+        subject2.onNext(1);
+        subject2.onNext(2);
+        subject2.onNext(3);
+
+        subject2.subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                disposable=d;
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                Log.i(TAG, "onNext: " + integer);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                Log.i(TAG, "onComplete: replay");
+                disposable.dispose();
+            }
+        }); // 1 2 3 4 5 6
+
+        subject2.onNext(4);
+        subject2.onNext(5);
+        subject2.onNext(6);
+
+        subject2.onComplete();
+
 
     }
 
