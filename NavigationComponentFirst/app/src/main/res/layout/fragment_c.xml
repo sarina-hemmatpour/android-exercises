@@ -3,23 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentB">
+    tools:context=".CFragment">
+
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="B"
-        android:layout_gravity="center"
+        android:text="C"
         android:textSize="42sp"
-        android:textColor="@color/black"/>
+        android:layout_gravity="center"/>
 
     <Button
-        android:id="@+id/btnGoToC"
+        android:id="@+id/btnGoToA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go to C"
+        android:text="Go to A"
         android:layout_gravity="bottom|center"
         android:layout_marginBottom="42dp"/>
+
 
 </FrameLayout>

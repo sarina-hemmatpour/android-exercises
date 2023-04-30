@@ -12,15 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-
-public class FragmentB extends Fragment {
+public class CFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Button btnGotoC=view.findViewById(R.id.btnGoToC);
-        btnGotoC.setOnClickListener(v->{
-            Navigation.findNavController(v).navigate(R.id.action_fragmentB_to_CFragment);
+        Button btnGoToA=view.findViewById(R.id.btnGoToA);
+        btnGoToA.setOnClickListener(v->{
+            Navigation.findNavController(v).navigate(R.id.action_CFragment_to_fragmentA);
         });
     }
 
@@ -28,6 +27,6 @@ public class FragmentB extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_b, container, false);
+        return inflater.inflate(R.layout.fragment_c, container, false);
     }
 }

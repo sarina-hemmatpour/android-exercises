@@ -18,5 +18,21 @@
         android:id="@+id/fragmentB"
         android:name="com.example.navigationcomponentfirst.FragmentB"
         android:label="fragment_b"
-        tools:layout="@layout/fragment_b" />
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/action_fragmentB_to_CFragment"
+            app:destination="@id/CFragment"
+            app:popUpTo="@id/fragmentA"/>
+    </fragment>
+    <fragment
+        android:id="@+id/CFragment"
+        android:name="com.example.navigationcomponentfirst.CFragment"
+        android:label="fragment_c"
+        tools:layout="@layout/fragment_c" >
+        <action
+            android:id="@+id/action_CFragment_to_fragmentA"
+            app:destination="@id/fragmentA"
+            app:popUpTo="@id/fragmentA"
+            app:popUpToInclusive="true"/>
+    </fragment>
 </navigation>
