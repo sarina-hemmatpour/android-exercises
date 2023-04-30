@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/titleScreenFragment">
+
+    <fragment
+        android:id="@+id/titleScreenFragment"
+        android:name="com.example.littlegamenavigationcomponentexcercise.TitleScreenFragment"
+        android:label="fragment_title_screen"
+        tools:layout="@layout/fragment_title_screen" >
+        <action
+            android:id="@+id/action_titleScreenFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.littlegamenavigationcomponentexcercise.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_matchFragment"
+            app:destination="@id/matchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/matchFragment"
+        android:name="com.example.littlegamenavigationcomponentexcercise.MatchFragment"
+        android:label="fragment_match"
+        tools:layout="@layout/fragment_match" >
+        <action
+            android:id="@+id/action_matchFragment_to_inGameFragment"
+            app:destination="@id/inGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inGameFragment"
+        android:name="com.example.littlegamenavigationcomponentexcercise.InGameFragment"
+        android:label="fragment_in_game"
+        tools:layout="@layout/fragment_in_game" >
+        <action
+            android:id="@+id/action_inGameFragment_to_winnerFragment"
+            app:destination="@id/winnerFragment"
+            app:popUpTo="@id/matchFragment"
+            app:popUpToInclusive="false"/>
+        <action
+            android:id="@+id/action_inGameFragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment"
+            app:popUpTo="@id/matchFragment"
+            app:popUpToInclusive="false"/>
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverFragment"
+        android:name="com.example.littlegamenavigationcomponentexcercise.GameOverFragment"
+        android:label="fragment_game_over"
+        tools:layout="@layout/fragment_game_over" >
+        <action
+            android:id="@+id/action_gameOverFragment_to_matchFragment"
+            app:destination="@id/matchFragment"
+            app:popUpTo="@id/registerFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/winnerFragment"
+        android:name="com.example.littlegamenavigationcomponentexcercise.WinnerFragment"
+        android:label="fragment_winner"
+        tools:layout="@layout/fragment_winner" >
+        <action
+            android:id="@+id/action_winnerFragment_to_matchFragment"
+            app:destination="@id/matchFragment"
+            app:popUpTo="@id/matchFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>
