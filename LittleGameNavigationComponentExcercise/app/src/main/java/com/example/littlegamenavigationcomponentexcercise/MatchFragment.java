@@ -1,5 +1,6 @@
 package com.example.littlegamenavigationcomponentexcercise;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+
+import java.util.Objects;
 
 
 public class MatchFragment extends Fragment {
@@ -28,5 +32,21 @@ public class MatchFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_match, container, false);
+    }
+
+    @SuppressLint("SetTextI18n")
+    @Override
+    public void onStart() {
+        super.onStart();
+        UserManager userManager=new UserManager(Objects.requireNonNull(getContext()));
+        String name=userManager.getUserInfo();
+        if (name.equals("")){
+            //go to splash screen
+            Navigation.findNavController(Objects.requireNonNull(getView())).navigate(R.id.action_matchFragment_to_auth_navigation);
+        }
+        else {
+            TextView tvMatch= Objects.requireNonNull(getView()).findViewById(R.id.tvMatch);
+            tvMatch.setText("Match\n"+name);
+        }
     }
 }
